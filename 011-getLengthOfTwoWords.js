@@ -1,11 +1,9 @@
 /*Write a function called “getLengthOfTwoWords”.
 Given 2 words, “getLengthOfTwoWords” returns the sum of their lengths.*/
 
-function isGreaterThan10(num) {
+function getLengthOfTwoWords(word1, word2) {
   // your code here
   /* START SOLUTION */
-  if(num > 10) {
-    return true;
-  } 
-  return false;/* END SOLUTION */
+  return word1.length + word2.length;
+  /* END SOLUTION */
 }
