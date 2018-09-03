@@ -1,0 +1,6 @@
+function getAllElementsButLast(array) {
+  // your code here
+  /* START SOLUTION */
+  return array.splice(0, array.length-1);
+  /* END SOLUTION */
+}
