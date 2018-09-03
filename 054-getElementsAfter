@@ -1,0 +1,6 @@
+function getElementsAfter(array, n) {
+  // your code here
+  /* START SOLUTION */
+  return array.slice(n+1);
+  /* END SOLUTION */
+}
