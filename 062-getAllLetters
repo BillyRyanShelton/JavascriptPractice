@@ -1,0 +1,9 @@
+function getAllLetters(str) {
+  // your code here
+  /* START SOLUTION */
+  var strArray = [];
+  for(var i = 0; i < str.length; i++) {
+    strArray.push(str[i]);
+  } return strArray;
+  /* END SOLUTION */
+}
