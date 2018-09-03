@@ -1,0 +1,11 @@
+function getLongestWordOfMixedElements(arr) {
+  var stringArr = arr.filter(function(val) { 
+    return (typeof val === 'string');
+  }); if(stringArr.length === 0) {
+    return '';
+  } return stringArr.reduce(function(longest, element) {
+    if(longest.length < element.length) {
+      return element;
+    } return longest;
+  })
+}
