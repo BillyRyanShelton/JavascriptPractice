@@ -1,0 +1,5 @@
+function computeFactorialOfN(n) {
+  if(n <= 1) {
+    return n;
+  } return n * computeFactorialOfN(n - 1);
+}
