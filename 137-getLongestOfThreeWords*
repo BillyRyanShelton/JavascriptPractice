@@ -1,0 +1,5 @@
+function getLongestOfThreeWords(word1, word2, word3) {
+  return [word1, word2, word3].reduce(function(longest, element) {
+    return (longest.length < element.length) ? element : longest;
+  })
+}
