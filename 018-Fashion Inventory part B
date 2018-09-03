@@ -1,0 +1,77 @@
+function calculateAveragePricePerDesigner(list) {
+  var expected = {};
+  expected.designers = [];
+  for(var i = 0; i < numOfDesigners(list); i++) {
+    var sum = 0;
+    for(var j = 0; j < numOfShoesPerDesigner(list, i); j++) {
+      sum += pricePerShoe(list, i, j)
+    } var avgCost = avgCostPerDesigner(sum, list, i);
+    expected.designers.push(designerNameAndAvgCostObj(avgCost, list, i));
+  } return expected;
+}
+
+function numOfDesigners(list) {
+  return list.length;
+}
+
+function numOfShoesPerDesigner(list, i) {
+  return list[i].shoes.length;
+}
+
+function pricePerShoe(list, i, j) {
+  return list[i].shoes[j].price;
+}
+
+function avgCostPerDesigner(sum, list, i){
+  return sum/list[i].shoes.length;
+}
+
+function designerNameAndAvgCostObj(avgCost, list, i){
+  var currentDesigner = {};
+    currentDesigner.averagePrice = avgCost;
+    currentDesigner.name = list[i].name;
+    return currentDesigner;
+}
+function assertObjectsEqual(actual, expected, testName) {
+  if(JSON.stringify(actual)===JSON.stringify(expected)) {
+    console.log('passed');
+  } else {
+    console.log('FAILED [' + testName + '] Expected ' + JSON.stringify(expected) + ', but got ' + JSON.stringify(actual));
+  }
+}
+
+function testFashionInventoryAvg() {
+  var currentInventory = [
+    {
+      name: 'Brunello Cucinelli',
+      shoes: [
+        {name: 'tasselled black low-top lace-up', price: 1000},
+        {name: 'tasselled green low-top lace-up', price: 1100},
+        {name: 'plain beige suede moccasin', price: 950},
+        {name: 'plain olive suede moccasin', price: 1050}
+      ]
+    },
+    {
+      name: 'Gucci',
+      shoes: [
+        {name: 'red leather laced sneakers', price: 800},
+        {name: 'black leather laced sneakers', price: 900}
+      ]
+    }
+  ];
+
+assertObjectsEqual(calculateAveragePricePerDesigner(currentInventory), {
+  'designers': [
+    {
+      'averagePrice': 1025,
+      'name': 'Brunello Cucinelli'
+    },
+    {
+      'averagePrice': 850,
+      'name': 'Gucci',
+    }
+  ]
+}, 'should find the average of each designer');
+}
+
+testFashionInventoryAvg();
