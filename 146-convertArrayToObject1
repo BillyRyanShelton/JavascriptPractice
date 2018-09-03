@@ -1,0 +1,5 @@
+function transformFirstAndLast(array) {
+  var firstAndLastObject = {};
+  firstAndLastObject[array[0]] = array[(array.length)-1];
+  return firstAndLastObject;
+}
