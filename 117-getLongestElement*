@@ -1,0 +1,9 @@
+function getLongestElement(arr) {
+ // if(arr.length === 0) {
+ //   return '';
+  return arr.reduce(function(longest, element) {
+    if(longest.length < element.length) {
+      return element;
+    } return longest;
+  });
+}
