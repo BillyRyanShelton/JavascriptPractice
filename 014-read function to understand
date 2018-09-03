@@ -1,0 +1,41 @@
+function findMaxRepeatCountInWord(word) {
+  var charList = word.split('');
+  var charCounter = 0;
+  var maxCharCount = 0;
+  for(var i = 0; i < charList.length; i++) { 
+    for(var j = 0; j < charList.length; j++) {
+      if(charList[j] === charList[i]) {
+        charCounter += 1;
+      } 
+    } if(charCounter > maxCharCount) { 
+        maxCharCount = charCounter;
+      }  charCounter = 0;
+  } return maxCharCount;
+};
+
+function findFirstWordWithMostRepeatedChars(text) {
+  var wordWithMaxRepeatCountIndex = 0;
+  var mostRepeatedChars = text.split(' ').map(findMaxRepeatCountInWord);
+  var wordWithMaxRepeatCount = mostRepeatedChars[0];
+  for(var i = 0; i < mostRepeatedChars.length; i++) {
+    if(wordWithMaxRepeatCount < mostRepeatedChars[i]) {
+      wordWithMaxRepeatCount = mostRepeatedChars[i];
+      wordWithMaxRepeatCountIndex = i;
+    }
+  } return text.split(' ')[wordWithMaxRepeatCountIndex];
+};
+
+function assertEqual(actual, expected, testName) {
+  if(actual === expected) {
+    console.log(testName + ': passed');
+  } else {
+    console.log('FAILED [' + testName + '] Expected "' + expected + '", but got "' + actual + '"');
+  }
+};
+
+function testFirstWordWithMostRepeatedChars() {
+  assertEqual(findFirstWordWithMostRepeatedChars('foo bar bazz'), 'foo', 'should find first word with most repeated char when there are multiple words with most repeated char');
+  assertEqual(findFirstWordWithMostRepeatedChars('foo bar bazzz'), 'bazzz', 'should find first word with most repeated char');
+}
+
+testFirstWordWithMostRepeatedChars();
