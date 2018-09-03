@@ -1,0 +1,7 @@
+function assertWithinRange(low, high, actual, testName) {
+  if(low <= actual && actual <= high) {
+    console.log('passed');
+  } else {
+    console.log('FAIL [' + testName + '] "' + actual + '" not within range ' + low + ' to ' + high);
+  }
+}
