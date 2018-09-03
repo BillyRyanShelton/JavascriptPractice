@@ -1,0 +1,3 @@
+function calculateBillTotal(preTaxAndTipAmount) {
+  return (preTaxAndTipAmount * (.095 + .15)) + preTaxAndTipAmount;
+}
