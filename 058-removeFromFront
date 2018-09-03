@@ -1,0 +1,7 @@
+function removeFromFront(arr) {
+  // your code here
+  /* START SOLUTION */
+  arr.splice(0, 1);
+  return arr;
+  /* END SOLUTION */
+}
