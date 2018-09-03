@@ -1,0 +1,5 @@
+function getEvenElementsAtProperty(obj, key) {
+if(!obj.hasOwnProperty(key) || !Array.isArray(obj[key]) || obj[key].length === 0) {
+  return [];
+} return obj[key].filter(function(element) { return element % 2 === 0;});
+}
