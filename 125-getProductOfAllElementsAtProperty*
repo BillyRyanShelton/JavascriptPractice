@@ -1,0 +1,7 @@
+function getProductOfAllElementsAtProperty(obj, key) {
+  if(!obj.hasOwnProperty(key) || !Array.isArray(obj[key]) || obj[key].length === 0) {
+    return 0;
+  } return obj[key].reduce(function(product, element) {
+    return product * element;
+  });
+}
