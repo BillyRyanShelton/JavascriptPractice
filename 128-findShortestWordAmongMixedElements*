@@ -1,0 +1,10 @@
+function findShortestWordAmongMixedElements(arr) {
+  if(arr.length === 0 || (arr.filter(function(val) { return (typeof val === 'string');
+  }).length === 0)) {
+    return '';
+  } return arr.filter(function(element) { return (typeof element === 'string');
+  }).reduce(function(shortest, val) { if(shortest.length > val.length) {
+      return val;
+    } return shortest;
+  })
+}
