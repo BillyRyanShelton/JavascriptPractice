@@ -1,0 +1,7 @@
+function removeFromBack(arr) {
+  // your code here
+  /* START SOLUTION */
+  arr.pop();
+  return arr;
+  /* END SOLUTION */
+}
