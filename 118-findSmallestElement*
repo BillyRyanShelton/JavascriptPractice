@@ -1,0 +1,9 @@
+function findSmallestElement(arr) {
+  if(arr.length === 0) {
+    return 0;
+  } return arr.reduce(function(smallest, element) {
+    if(smallest > element) {
+      return element;
+    } return smallest;
+  });
+}
