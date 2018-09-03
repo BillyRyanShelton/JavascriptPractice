@@ -1,0 +1,61 @@
+function renderInventory(list) {
+  var inventoryString = '';
+  for(var i = 0; i < list.length; i++) {
+    for(var j = 0; j < list[i].shoes.length; j++) {
+      inventoryString += designerName(list, i) + ', ';
+      inventoryString += shoeName(list, i, j) + ', ';
+      inventoryString += shoePrice(list, i, j) + '\n';
+    } 
+  } inventoryString = inventoryString.slice(0,-1);
+  return (inventoryString);
+}
+
+function designerName(obj, designerIndex) {
+  return obj[designerIndex].name;
+};
+
+function shoeName(obj, designerIndex, shoeIndex) {
+  return obj[designerIndex].shoes[shoeIndex].name;
+};
+
+function shoePrice(obj, designerIndex, shoeIndex) {
+  return obj[designerIndex].shoes[shoeIndex].price;
+};
+
+function assertObjectsEqual(actual, expected, testName) {
+  if(JSON.stringify(actual)===JSON.stringify(expected)) {
+    console.log('passed');
+  } else {
+    console.log('FAILED [' + testName + '] Expected ' + JSON.stringify(expected) + ', but got ' + JSON.stringify(actual));
+  }
+}
+
+function testFashionInventoryStringExtracton() {
+  var currentInventory = [
+    {
+      name: 'Brunello Cucinelli',
+      shoes: [
+        {name: 'tasselled black low-top lace-up', price: 1000},
+        {name: 'tasselled green low-top lace-up', price: 1100},
+        {name: 'plain beige suede moccasin', price: 950},
+        {name: 'plain olive suede moccasin', price: 1050}
+      ]
+    },
+    {
+      name: 'Gucci',
+      shoes: [
+        {name: 'red leather laced sneakers', price: 800},
+        {name: 'black leather laced sneakers', price: 900}
+      ]
+    }
+  ];
+
+assertObjectsEqual(renderInventory(currentInventory), ('Brunello Cucinelli, tasselled black low-top lace-up, 1000\n' +
+ 'Brunello Cucinelli, tasselled green low-top lace-up, 1100\n' +
+ 'Brunello Cucinelli, plain beige suede moccasin, 950\n' +
+ 'Brunello Cucinelli, plain olive suede moccasin, 1050\n' +
+ 'Gucci, red leather laced sneakers, 800\n' + 
+ 'Gucci, black leather laced sneakers, 900'), 'should determine if output is correct string');
+}
+
+testFashionInventoryStringExtracton();
