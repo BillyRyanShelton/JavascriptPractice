@@ -1,0 +1,6 @@
+function getAllKeys(obj) {
+  var arr = [];
+  for(var prop in obj) {
+    arr.push(prop);
+  } return arr;
+}
