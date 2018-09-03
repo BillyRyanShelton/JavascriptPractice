@@ -1,0 +1,9 @@
+function convertObjectToList(obj) {
+  var arr = [];
+  for(var prop in obj) {
+    var miniArr = [];
+    miniArr.push(prop);
+    miniArr.push(obj[prop]);
+    arr.push(miniArr);
+  } return arr;
+}
