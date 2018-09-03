@@ -1,0 +1,6 @@
+function multiply(num1, num2) {
+  var product = 0;
+  for(var i = 0; i < Math.abs(num1); i++) {
+    product += Math.abs(num2);
+  } return ((num1 > 0 && num2 > 0) || (num1 < 0 && num2 < 0)) ? product : -product;
+}
