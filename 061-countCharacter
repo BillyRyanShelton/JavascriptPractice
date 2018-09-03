@@ -1,0 +1,11 @@
+function countCharacter(str, char) {
+  // your code here
+  /* START SOLUTION */
+  var countChar = 0;
+  for(var i = 0; i < str.length; i++) {
+    if(char === str[i]) {
+      countChar += 1;
+    }
+  } return countChar;
+  /* END SOLUTION */
+}
