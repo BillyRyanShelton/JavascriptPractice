@@ -1,0 +1,7 @@
+function removeStringValues(obj) {
+  for(var prop in obj) {
+    if(typeof obj[prop] === 'string') {
+      delete obj[prop];
+    }
+  } return obj;
+}
