@@ -1,0 +1,17 @@
+function countWords(str) {
+  // your code here
+  /* START SOLUTION */
+  if(str === '') {
+    return {};
+  }
+  var wordArray = str.split(' ');
+  var wordObj = {};
+  for(var i = 0; i < wordArray.length; i++) {
+    if(wordObj.hasOwnProperty(wordArray[i])) {
+      wordObj[wordArray[i]] += 1; 
+    } else {
+      wordObj[wordArray[i]] = 1;
+    }
+  } return wordObj;
+  /* END SOLUTION */
+}
