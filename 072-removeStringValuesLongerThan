@@ -1,0 +1,7 @@
+function removeStringValuesLongerThan(num, obj) {
+  for(var prop in obj) {
+    if(obj[prop].length > num) {
+      delete obj[prop];
+    }
+  } return obj;
+}
