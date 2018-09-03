@@ -1,0 +1,11 @@
+function getLargestNumberAmongMixedElements(arr) {
+  var numArr = arr.filter(function(val) {
+    return (typeof val === 'number');
+  }); if(numArr.length === 0) {
+    return 0;
+  } return numArr.reduce(function(largest, element) {
+    if(largest < element) {
+      return element;
+    } return largest;
+  })
+}
