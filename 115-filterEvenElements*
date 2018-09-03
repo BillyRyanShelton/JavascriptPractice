@@ -1,0 +1,4 @@
+function filterEvenElements(arr) {
+  if(arr.length === 0) { return []; }
+  return arr.filter(function(element) { return element % 2 === 0; });
+}
