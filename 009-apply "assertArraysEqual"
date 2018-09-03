@@ -1,0 +1,33 @@
+function map(array, callbackFunction) {
+  var newArray = [];
+  array.forEach(function(element) {
+    newArray = newArray + callbackFunction(element);
+  });
+  return newArray;
+}
+
+function cubeAll(numbers) {
+  return map(numbers, function(n) {
+    return n * n * n;
+  });
+}
+
+function assertArraysEqual(actual, expected, testName) {
+   var areEqualArrays = 1;
+   for(var i = 0; i < actual.length; i++) {
+     if(actual[i] != expected[i]) {
+       areEqualArrays = 0;
+     }
+   } if(areEqualArrays = 1) {
+     console.log('passed');
+   } else {
+     console.log('FAILED [' + testName + '] Expected"' + expected + '", but got "' + actual + '"');
+   }
+}
+
+assertArraysEqual(cubeAll([1,2,3,4,5]), [1,8,27,64,125], 'cubes all positive numbers of an an array');
+assertArraysEqual(cubeAll([0,0,0,0,0]), [0,0,0,0,0], 'cubes all 0s of an array');
+assertArraysEqual(cubeAll([-1,-2,-3,-4,-5]), [-1,-8,-27,-64,-125], 'cubes all negative numbers of an array');
+assertArraysEqual(cubeAll([-1,2,-3,4,-5]), [-1,8,-27,64,-125], 'if all cubed elements are equal');
+assertArraysEqual(cubeAll([]), [], 'cube two empty arrays');
+assertArraysEqual(cubeAll(['jump','hi']), ['jumpjumpjump', 'hihihi'], 'repeat all strings 3 times in an array');
