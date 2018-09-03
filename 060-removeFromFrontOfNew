@@ -1,0 +1,6 @@
+function removeFromFrontOfNew(arr) {
+  // your code here
+  /* START SOLUTION */
+  return arr.slice(1, arr.length);
+  /* END SOLUTION */
+}
