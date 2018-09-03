@@ -1,0 +1,8 @@
+function or(expression1, expression2) {
+  // your code here
+  /* START SOLUTION */
+  if(expression1 != 1 && expression2 != 1) {
+      return false;
+    } return true;
+  /* END SOLUTION */
+}
