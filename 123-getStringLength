@@ -1,0 +1,6 @@
+function getStringLength(string) {
+  var sum = 0;
+  for(var i in string) {
+    sum += 1;
+  } return sum;
+}
