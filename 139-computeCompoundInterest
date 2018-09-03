@@ -1,0 +1,5 @@
+function computeCompoundInterest(principal, interestRate, compoundingFrequency, timeInYears) {
+  var finalAmount = principal*((1+(interestRate/compoundingFrequency))**((timeInYears)*compoundingFrequency));
+  var interest = finalAmount - principal;
+  return interest;
+}
