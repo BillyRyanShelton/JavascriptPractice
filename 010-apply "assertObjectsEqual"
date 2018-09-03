@@ -1,0 +1,26 @@
+function addFullNameProp(obj) {
+  var firstName = obj.firstName;
+  var lastName = obj['lastName'];
+  if (firstName && lastName) {
+    obj['fullName'] = firstName + ' ' + lastName;
+  } return obj;
+}
+
+function assertObjectsEqual(actual, expected, testName) {
+  if(JSON.stringify(actual) === JSON.stringify(expected)) {
+    console.log('passed')
+  } else {
+    console.log('FAILED [' + testName + '] Expected ' + JSON.stringify(expected) + ', but got ' + JSON.stringify(actual));
+  }
+}
+
+var withoutFull = {
+  firstName : 'Billy',
+  lastName : 'Shelton'
+};
+var withFull = { 
+  firstName:'Billy',
+  lastName:'Shelton',
+  fullName:'Billy Shelton' }
+
+assertObjectsEqual(addFullNameProp(withoutFull), withFull, 'add full name property to obj');
