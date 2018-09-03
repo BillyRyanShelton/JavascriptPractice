@@ -1,0 +1,41 @@
+function decorateClassListWithAges(names){
+  var ListObjs = [];
+  names.forEach(function(element) {
+    ListObjs.push(createNameObject(element));
+  });  return ListObjs;
+};
+
+function createNameObject(name) {
+  var nameObj = {};
+  nameObj['name'] = name;
+  nameObj['age'] = Math.floor(Math.random() + 10.5);
+  return nameObj;
+};
+
+function assertWithinRange(value, min, max, testName){
+  if(value >= min && value <= max) {
+    console.log(testName + ': passed');
+  } else {
+    console.log('FAILED [' + testName + ']' + value + 'is not within range of ' + min + ' and ' + max);
+  }
+};
+
+function assertEqual(actual, expected, testName) {
+  if(actual === expected) {
+    console.log(testName + ': passed');
+  } else {
+    console.log('FAILED [' + testName + '] Expected "' + expected + '", but got "' + actual + '"');
+  }
+}
+
+function testCorrectNameListToObjectList(){
+  console.log('Checking if list of names is properly converted to a list of person objects with correct name and age\n');
+  var classList = ["Joe", "Jack", "John", "Fred", "Frank"];
+  var listObjNames = decorateClassListWithAges(classList);
+  for(var i = 0; i < listObjNames.length; i++){
+    assertEqual(listObjNames[i]['name'], classList[i], 'Name Check:');
+    assertWithinRange(listObjNames[i]['age'], 10, 11, 'Age 10 or 11');
+  }
+};
+
+testCorrectNameListToObjectList();
