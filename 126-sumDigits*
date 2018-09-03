@@ -1,0 +1,10 @@
+function sumDigits(num) {
+  if(num === 0) {
+    return 0;
+  } else if(num.toString().split('')[0] === '-') {
+    return -num.toString().split('')[1] + num.toString().split('').slice(2).reduce(function(sum, element) {
+    return Number(sum) + Number(element);
+  })} return num.toString().split('').reduce(function(sum, element) {
+    return Number(sum) + Number(element);
+  })
+}
