@@ -1,0 +1,25 @@
+function convertScoreToGradeWithPlusAndMinus(score) {
+  score = score.toString();
+  if(Number(score) > 100 || Number(score) < 0) {
+    return 'INVALID SCORE';
+  } else if(score.length === 3) {
+    return 'A+';
+  } else if(Number(score) < 60) {
+    return 'F';
+  } var letterGradeAndSign = '';
+  var firstDigit = ['5', '6', '7', '8', '9'];
+  var letterGrad = ['F', 'D', 'C', 'B', 'A'];
+  var boundary = [3, 8, 10];
+  var sign = ['-', '', '+'];
+  for(var i = 0; i < firstDigit.length; i++) {
+    if(score[0] === firstDigit[i]) {
+      letterGradeAndSign += letterGrad[i];
+      for(var j = 0; j < sign.length; j++) {
+        if(Number(score[1]) < boundary[j]) {
+          letterGradeAndSign += sign[j];
+          break;
+        }
+      }
+    } 
+  }  return letterGradeAndSign;
+}
