@@ -1,0 +1,46 @@
+function PhoneNumberFormatter(numbers) {
+  this.numbers = numbers;
+}
+
+PhoneNumberFormatter.prototype.render = function() {
+  var string = '';
+  string += this.parenthesize(this.getAreaCode()) + ' ';
+  string += this.getExchangeCode() + '-';
+  string += this.getLineNumber();
+  return string;
+};
+
+PhoneNumberFormatter.prototype.getAreaCode = function() {
+  return this.slice(0,3);
+};
+
+PhoneNumberFormatter.prototype.getExchangeCode = function() {
+  return this.slice(3,6);
+};
+
+PhoneNumberFormatter.prototype.getLineNumber = function() {
+  return this.slice(6,10);
+};
+
+PhoneNumberFormatter.prototype.parenthesize = function(string) {
+  return '(' + string + ')';
+};
+
+PhoneNumberFormatter.prototype.slice = function(start, end) {
+  return this.numbers.slice(start, end).join('');
+};
+
+function assertEqual(actual, expected, testName) {
+  if(actual === expected) {
+    console.log(testName + ': passed');
+  } else {
+    console.log('FAILED [' + testName + '] Expected "' + expected + '", but got "' + actual + '"');
+  }
+};
+
+function testPhoneNumberFormatter() {
+  var phoneNum = new PhoneNumberFormatter([9,5,6,7,8,9,4,5,6,2]);
+  assertEqual(phoneNum.render(), '(956)789-4562', 'list of numbers to a phone number format');
+}
+
+testPhoneNumberFormatter();
