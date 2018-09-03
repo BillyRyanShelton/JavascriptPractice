@@ -1,0 +1,9 @@
+function getLargestElement(arr) {
+  if(arr.length === 0) {
+    return 0;
+  } return arr.reduce(function(largest, element) {
+    if(largest < element) {
+      return element;
+    } return largest;
+  })
+}
