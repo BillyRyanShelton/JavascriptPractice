@@ -1,0 +1,6 @@
+function getAllElementsButFirst(array) {
+  // your code here
+  /* START SOLUTION */
+  return array.slice(1);
+  /* END SOLUTION */
+}
