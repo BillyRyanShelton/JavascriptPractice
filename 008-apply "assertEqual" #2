@@ -1,0 +1,23 @@
+function every(array, callbackFunction) {
+  var doesEveryElementMatch = true;
+  array.forEach(function(element) {
+  if(doesEveryElementMatch != callbackFunction(element)) {
+    doesEveryElementMatch = false; 
+  }
+  }); return doesEveryElementMatch;
+}
+
+function isNum(num) {
+  return num % 2 === 0;
+}
+
+function assertEqual(actual, expected, testName) {
+  if(actual === expected) {
+    console.log('passed');
+  } else {
+    console.log('FAILED [' + testName + '] expected "' + expected + '", but got "' + actual + '"');
+  }
+}
+
+assertEqual(every([5, 2, 4, 8, 12], isNum), false, 'if at least one number is odd');
+assertEqual(every([0, 2, 4, 8, 12], isNum), true, 'if at all numbers are even');
