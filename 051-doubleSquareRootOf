@@ -1,0 +1,6 @@
+function doubleSquareRootOf(num) {
+  // your code here
+  /* START SOLUTION */
+  return (num ** (1/2)) * 2;
+  /* END SOLUTION */
+}
