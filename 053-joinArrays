@@ -1,0 +1,6 @@
+function joinArrays(arr1, arr2) {
+  // your code here
+  /* START SOLUTION */
+  return arr1.concat(arr2);
+  /* END SOLUTION */
+}
