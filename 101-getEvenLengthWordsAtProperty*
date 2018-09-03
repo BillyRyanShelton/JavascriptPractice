@@ -1,0 +1,5 @@
+function getEvenLengthWordsAtProperty(obj, key) {
+  if(!obj.hasOwnProperty(key) || !Array.isArray(obj[key]) || obj[key] === 0) {
+    return [];
+  } return obj[key].filter(function(element) { return element.length % 2 === 0;})
+}
