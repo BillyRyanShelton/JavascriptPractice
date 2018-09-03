@@ -1,0 +1,3 @@
+function removeElement(array, discarder) {
+  return array.filter(function (element) { return element != discarder; })
+}
