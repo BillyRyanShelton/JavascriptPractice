@@ -1,0 +1,9 @@
+function getLargestElementAtProperty(obj, key) {
+  if(!obj.hasOwnProperty(key) || !Array.isArray(obj[key]) || obj[key].length === 0) {
+    return undefined;
+  } return obj[key].reduce(function(largest, element) {
+     if(largest < element) { 
+       return element;
+     } return largest;
+   });
+}
