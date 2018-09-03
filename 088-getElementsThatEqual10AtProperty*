@@ -1,0 +1,6 @@
+
+function getElementsThatEqual10AtProperty(obj, key) {
+  if(!obj.hasOwnProperty(key) || !Array.isArray(obj[key])) {
+    return [];
+  } return obj[key].filter(function(element) { return element === 10; })
+}
