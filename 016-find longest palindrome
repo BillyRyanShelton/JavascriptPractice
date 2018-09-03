@@ -1,0 +1,49 @@
+function findLongestPalindrome(sentence) {
+  // split sentence into words
+  var listWords = sentence.split(' ');
+  // iterate words and collect the palindromes
+  var palList = listWords.filter(function(element) {
+    return isPalindrome(element);
+  });
+  // sort the list of palindromes by word length
+  palList.sort(function(a,b) {
+    sortAscendingByLength(a, b)
+  })
+  // return the largest item in the sorted list
+  return palList[palList.length-1];
+};
+
+function reverseString(string) {
+  var stringArr = string.split('');
+  var revString = '';
+  for(var i = stringArr.length - 1; i > -1; i--) {
+    revString += stringArr[i];
+  } return revString;
+};
+
+function isPalindrome(word) {
+  //return (word === reverseString(word) ? true : false);
+  if(word === reverseString(word)) {
+    return true;
+  } return false;
+};
+
+function sortAscendingByLength(a, b) {
+  return a.length - b.length;
+};
+
+function assertEqual(actual, expected, testName) {
+  if(actual === expected) {
+    console.log(testName + ': passed');
+  } else {
+    console.log('FAILED [' + testName + '] Expected "' + expected + '", but got "' + actual + '"');
+  }
+};
+
+function testLongestPalindrome() {
+  assertEqual(findLongestPalindrome('Our civic duty is to kayak'), 'kayak', 'should find last longest palindrome');
+  assertEqual(findLongestPalindrome('Our civic duty is to kayak without a rotator as you well know'), 'rotator', 'should find longest palindrome');
+  assertEqual(findLongestPalindrome('Our civic duty is to kayak without a RoTaToR as you well know'), 'RoTaToR', 'should find longlest case sensitive palindrome');
+};
+
+testLongestPalindrome();
