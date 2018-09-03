@@ -1,0 +1,7 @@
+function getElementsGreaterThan10AtProperty(obj, key) {
+ if(!obj.hasOwnProperty(key) || obj[key] === [] || !Array.isArray(obj[key])) {
+   return [];
+ } else {
+   return obj[key].filter(function(element) { return element > 10; })
+ }
+}
