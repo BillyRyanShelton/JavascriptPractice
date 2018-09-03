@@ -1,0 +1,12 @@
+function findSmallestNumberAmongMixedElements(arr) {
+  var numArr = arr.filter(function(val) {
+    return (typeof val === 'number')
+  });
+  if(numArr.length === 0){
+    return 0;
+  } return numArr.reduce(function(smallest, element) {
+    if(smallest > element) {
+      return element;
+    } return smallest;
+  })
+}
