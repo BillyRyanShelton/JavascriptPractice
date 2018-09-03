@@ -1,0 +1,37 @@
+function average(numbers) {
+  return sum(numbers)/numbers.length;
+};
+
+function sum(numbers) {
+  return numbers.
+  reduce(function(total, element) {
+    return total + element;
+  });
+};
+
+function assertArraysEqual(expected, actual, testName) {
+  for(var i = 0; i < actual; i++) {
+    if(expected[i] != actual[i]) {
+      console.log('FAILED [' + testName + '] Expected' + expected + ', but got "' + actual + "'");
+    } else {
+      console.log('passed ' + testName);
+    }
+  }
+};
+
+function testCorrectAverage(){
+  var expectedPos = 15;
+  var actualPos = [1, 2, 3, 4, 5];
+
+  var expectedNeg = -15;
+  var actualNeg = [-1, -2, -3, -4, -5];
+
+  var expectedZero = 0;
+  var actualZero = [0, 0, 0, 0, 0];
+
+  assertArraysEqual(expectedPos, average(actualPos), '- finds average of array with positive integers');
+  assertArraysEqual(expectedNeg, average(actualNeg), '- finds average of array with negitive integers');
+  assertArraysEqual(expectedZero, average(actualZero), '- finds average of array with 0 values');
+};
+
+testCorrectAverage();
