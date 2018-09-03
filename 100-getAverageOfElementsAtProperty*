@@ -1,0 +1,7 @@
+function getAverageOfElementsAtProperty(obj, key) {
+  if(!obj.hasOwnProperty(key) || !Array.isArray(obj[key]) || (obj[key].length === 0)) {
+    return 0;
+  } var sum = obj[key].reduce(function(total, element) { 
+    return total + element;
+  });  return sum/obj[key].length;
+}
