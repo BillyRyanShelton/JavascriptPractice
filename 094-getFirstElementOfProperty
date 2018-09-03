@@ -1,0 +1,5 @@
+function getFirstElementOfProperty(obj, key) {
+  if(!obj.hasOwnProperty(key) || !Array.isArray(obj[key]) || obj[key] === []) {
+    return undefined;
+  } return obj[key][0];
+}
