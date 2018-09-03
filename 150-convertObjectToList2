@@ -1,0 +1,6 @@
+function listAllValues(obj) {
+  var arr = [];
+  for(var prop in obj) {
+    arr.push(obj[prop]);
+  } return arr;
+}
