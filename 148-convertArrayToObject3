@@ -1,0 +1,9 @@
+function transformEmployeeData(array) {
+  var primaryArray = [];
+  for(var row = 0; row < array.length; row++) { 
+    var obj = {};
+    for(var column = 0; column < array[row].length; column++) {
+      obj[array[row][column][0]] = array[row][column][1];
+    } primaryArray.push(obj);
+  } return primaryArray;
+}
