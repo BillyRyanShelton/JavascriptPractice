@@ -1,0 +1,9 @@
+function getLengthOfShortestElement(arr) {
+  if(arr.length === 0) {
+    return 0;
+  } return arr.reduce(function(shortest, element) {
+    if(shortest.length > element.length) {
+      return element
+    } return shortest;
+  }).length;
+}
