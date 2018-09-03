@@ -1,0 +1,3 @@
+function joinArrayOfArrays(arr) {
+  return arr.reduce(function(sum, element) { return sum.concat(element );})
+}
