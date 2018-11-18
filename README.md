@@ -1,2 +1,2 @@
 # JavascriptPractice
-The follow repository is composed of a bunch small practice javascript problems.
+The follow repository is composed of a bunch of small practice javascript problems.
